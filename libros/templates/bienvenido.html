@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+     <a class="navbar-item">
+          Biblioteca
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            <a href="./mibiblio">Mi Biblioteca</a>
+          </a>
+  </div>
+</nav>
+
+<body>
+
+    <div>
+            {%  for libro in libros %}
+                    <div class="card $card-footer-border-top">
+                        <div class="card-content">
+                            <div class="Titulo">
+                                {{libro.Titulo}}
+                             </div>
+                             <div class = "Autor">
+                                {{libro.Autor}}
+                             </div>
+                             <div class = "Genero">
+                                {{libro.Genero}}
+                             </div>
+                             <div class = "Descripcion">
+                                {{libro.Descripcion}}
+                             </div>
+                             <div class="buttons">
+                                <button class="button is-success is-light">
+                                 <a href="agregar_libro/{{libro.id}}">Agregar</a>
+                                </button>
+
+                                <button class="button is-success is-light">
+                                <a href="eliminar/{{libro.id}}">Eliminar</a>
+                                </button>
+
+
+                                <button class="button is-success is-light">
+                                <a href="editar_libro/{{libro.id}}">modificar</a>
+
+                                </button>
+                            </div>
+                        </div>
+                    </div>                 
+            {% endfor %}
+    </div>
+
+
+
+
+</body>
+</html>
